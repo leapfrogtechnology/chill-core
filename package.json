@@ -8,7 +8,8 @@
     "clean": "rimraf dist/",
     "babel": "babel src/ -d dist/",
     "build": "run-s lint clean babel",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "postinstall": "npm run build"
   },
   "main": "dist/index.js",
   "keywords": [
