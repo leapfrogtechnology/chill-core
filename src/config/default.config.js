@@ -24,6 +24,13 @@ export default {
   restApi: {
     port: 8000
   },
+  dashboard: {
+    logo: null,
+    logoHeight: '80px',
+    title: 'Chill Dashboard',
+    apiBaseUrl: null,
+    websocketBaseUrl: null
+  },
   monitoring: {
     method: 'OPTIONS',
     minInterval: 1000,
