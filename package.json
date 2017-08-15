@@ -7,7 +7,8 @@
     "lint:fix": "eslint src test --fix; exit 0",
     "clean": "rimraf dist/",
     "babel": "babel src/ -d dist/",
-    "build": "run-s lint clean babel"
+    "build": "run-s lint clean babel",
+    "prepublish": "npm run build"
   },
   "main": "dist/index.js",
   "keywords": [
