@@ -1,8 +1,11 @@
 import path from 'path';
 import pkg from '../package';
+import { isFunction } from './utils/common';
 
 /**
  * Initialize the monitor and start monitoring configured services.
+ *
+ * @returns {Promise}
  */
 export default async function init(callback) {
   process.stdout.write(`Initializing ${pkg.name} ${pkg.version}\n`);
@@ -10,10 +13,12 @@ export default async function init(callback) {
   try {
     const config = await resolveConfig();
 
-    callback(config);
+    // If callback is a function then trigger it.
+    if (isFunction(callback)) {
+      callback(config);
+    }
 
-    return;
-    // Start the app
+    return config;
   } catch (err) {
     process.stderr.write('An error occurred: \n' + err);
   }
