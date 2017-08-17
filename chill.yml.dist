@@ -1,6 +1,14 @@
 logging:
   level: debug
 
+dashboard:
+  baseHref: '/'
+  logoUrl: LOGO_URL
+  logoHeight: '80px'
+  title: 'Chill Dashboard'
+  websocketBaseUrl: WEBSOCKET_URL
+  apiBaseUrl: 'http://chill.lftechnology.com/api'
+  
 db:
 # SQLite Database Configuration
   client: 'sqlite3'
@@ -8,6 +16,7 @@ db:
     filename: './chill.db'
 
 # PostgreSQL Database Configuration
+# client: 'pg'
 # connection:
 #   charset: 'utf8'
 #   database: chill
