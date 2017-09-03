@@ -9,7 +9,14 @@
     "babel": "babel src/ -d dist/",
     "build": "run-s lint clean babel",
     "prepublish": "npm run build",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "main": "dist/index.js",
   "keywords": [
@@ -29,7 +36,6 @@
     "yamljs": "^0.2.10"
   },
   "devDependencies": {
-    "npm-run-all": "^4.0.2",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
@@ -42,6 +48,9 @@
     "babel-preset-es2017": "^6.24.1",
     "babel-register": "^6.24.1",
     "eslint": "^3.19.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.4",
+    "npm-run-all": "^4.0.2",
     "rimraf": "^2.6.1",
     "semver": "^5.3.0"
   },
