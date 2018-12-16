@@ -15,13 +15,13 @@
     "lint:fix": "eslint src --fix",
     "clean": "rimraf dist/",
     "babel": "babel src/ -d dist/",
-    "build": "run-s lint clean babel"
+    "build": "run-s lint clean babel",
+    "prepublish": "npm run build",
+    "postinstall": "npm run build"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-publish": "npm run build",
-      "post-install": "npm run build"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
