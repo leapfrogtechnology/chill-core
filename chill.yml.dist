@@ -8,7 +8,7 @@ dashboard:
   title: 'Chill Dashboard'
   websocketBaseUrl: WEBSOCKET_URL
   apiBaseUrl: 'http://chill.lftechnology.com/api'
-  
+
 db:
 # SQLite Database Configuration
   client: 'sqlite3'
@@ -37,10 +37,6 @@ notifications:
   slack:
     enabled: false
     endpoint: SLACK_WEBHOOK_ENDPOINT
-  hipchat:
-    enabled: false
-    authToken: HIPCHAT_WEBHOOK_TOKENID
-    roomId: HIPTCHAT_WEBHOOK_ROOMID
   twilio:
     enabled: false
     sender: SENDING_NUMBER

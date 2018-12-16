@@ -6,13 +6,16 @@ import logger from './logger';
 import * as config from '../config/config';
 
 /**
+ * Database instance.
+ */
+let db;
+
+/**
  * Create a new database client.
  * Return the same client if it is already created.
  *
  * @returns {Object}
  */
-let db;
-
 export function getClient() {
   if (db) {
     return db;

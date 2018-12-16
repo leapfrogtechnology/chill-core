@@ -2,15 +2,27 @@
   "name": "chill-core",
   "version": "1.0.0-alpha.1",
   "description": "Chill core utilities and common dependencies.",
+  "main": "dist/index.js",
+  "authors": [
+    "Kabir Baidhya"
+  ],
+  "files": [
+    "dist/"
+  ],
+  "license": "MIT",
   "scripts": {
-    "lint": "eslint src test; exit 0",
-    "lint:fix": "eslint src test --fix; exit 0",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
     "clean": "rimraf dist/",
     "babel": "babel src/ -d dist/",
-    "build": "run-s lint clean babel",
+    "build": "run-s clean babel",
     "prepublish": "npm run build",
-    "postinstall": "npm run build",
-    "precommit": "lint-staged"
+    "postinstall": "npm run build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.js": [
@@ -18,47 +30,36 @@
       "git add"
     ]
   },
-  "main": "dist/index.js",
   "keywords": [
     "chill",
     "core",
     "utilities"
   ],
-  "authors": [
-    "Kabir Baidhya"
-  ],
-  "license": "MIT",
   "dependencies": {
-    "memory-cache": "^0.1.6",
-    "webpack-merge": "^4.1.0",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-plugin-dynamic-import-node": "^2.2.0",
+    "bookshelf": "^0.14.1",
+    "bookshelf-camelcase": "^2.0.1",
+    "knex": "^0.16.2",
+    "memory-cache": "^0.2.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^2.6.2",
+    "webpack-merge": "^4.1.5",
     "winston": "^2.3.0",
     "winston-daily-rotate-file": "^1.4.0",
-    "yamljs": "^0.2.10"
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.18.0",
-    "babel-core": "^6.22.1",
-    "babel-eslint": "^7.1.1",
-    "babel-jest": "^19.0.0",
-    "babel-loader": "^6.2.10",
-    "babel-plugin-dynamic-import-node": "^1.0.2",
-    "babel-preset-env": "^1.3.2",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-es2016": "^6.24.1",
-    "babel-preset-es2017": "^6.24.1",
-    "babel-register": "^6.24.1",
-    "eslint": "^3.19.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^4.0.4",
-    "npm-run-all": "^4.0.2",
-    "rimraf": "^2.6.1",
-    "semver": "^5.3.0"
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.10.0",
+    "eslint-config-leapfrog": "^2.0.0-beta.0",
+    "husky": "^1.2.1",
+    "lint-staged": "^8.1.0"
   },
-  "files": [
-    "dist/"
-  ],
   "engines": {
-    "node": ">= 6.9.0",
-    "npm": ">= 3.10.8"
+    "node": ">= 8.12.0",
+    "npm": ">= 6.4.1"
   }
 }
