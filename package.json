@@ -15,7 +15,7 @@
     "lint:fix": "eslint src --fix",
     "clean": "rimraf dist/",
     "babel": "babel src/ -d dist/",
-    "build": "run-s lint clean babel",
+    "build": "run-s clean babel",
     "prepublish": "npm run build",
     "postinstall": "npm run build"
   },
