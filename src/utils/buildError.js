@@ -3,8 +3,8 @@ import HttpStatus from 'http-status-codes';
 /**
  * Build error response for validation errors.
  *
- * @param  {error} err
- * @return {array|object}
+ * @param   {Error} err
+ * @returns {Array|Object}
  */
 function buildError(err) {
   // Validation errors

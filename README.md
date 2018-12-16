@@ -19,4 +19,4 @@ Read our [contributing guide](https://github.com/leapfrogtechnology/chill/blob/m
 
 ## License
 
-Chill is licensed under the [MIT License](LICENSE.md).
+Chill is licensed under the [MIT License](LICENSE).

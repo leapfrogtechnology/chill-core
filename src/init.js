@@ -5,6 +5,7 @@ import { isFunction } from './utils/common';
 /**
  * Initialize the monitor and start monitoring configured services.
  *
+ * @param   {Function} callback
  * @returns {Promise}
  */
 export default async function init(callback) {
